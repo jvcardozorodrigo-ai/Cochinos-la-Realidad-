@@ -22,11 +22,35 @@
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1594771804816-773715d96200?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1594771804816-773715d96200?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
+            background-position: center;
             color: white;
             padding: 100px 20px;
             text-align: center;
+            overflow: hidden;
+        }
+
+        /* Texto grande en el fondo */
+        .bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            font-size: 8rem;
+            font-weight: 900;
+            color: white;
+            opacity: 0.08;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 1;
+            letter-spacing: 10px;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 2; /* por encima del texto de fondo */
         }
 
         .container {
@@ -75,14 +99,36 @@
             padding: 20px;
             margin-top: 50px;
         }
+
+        /* Foto destacada debajo de la cabecera (opcional) */
+        .hero-photo {
+            max-width: 1000px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .hero-photo img { width: 100%; height: auto; display: block; }
+
+        @media (max-width: 600px) {
+            .bg-text { font-size: 3.5rem; letter-spacing: 4px; }
+            header { padding: 60px 10px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>oi</h1>
+    <div class="bg-text">AGROPECUARIA</div>
+    <h1>Elite Duroc</h1>
     <p>A excelência em suínos para o seu plantel</p>
 </header>
+
+<!-- Foto destacada de la raza Duroc -->
+<div class="hero-photo container">
+    <img src="https://images.unsplash.com/photo-1549421263-504543310497?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Suíno Duroc">
+</div>
 
 <div class="container">
     <h2>Nossos Reprodutores Duroc</h2>
