@@ -11,6 +11,7 @@
             --accent: #e67e22;
             --dark: #333;
             --light: #f4f4f4;
+            --brand-green: #2E7D32; /* verde profesional */
         }
 
         body {
@@ -41,11 +42,15 @@
             font-size: 8rem;
             font-weight: 900;
             color: white;
-            opacity: 0.08;
+            opacity: 0.95; /* más visible sobre el fondo verde */
             white-space: nowrap;
             pointer-events: none;
             z-index: 1;
             letter-spacing: 10px;
+            background-color: var(--brand-green);
+            padding: 0.2em 0.8em;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
         header > * {
@@ -112,7 +117,7 @@
         .hero-photo img { width: 100%; height: auto; display: block; }
 
         @media (max-width: 600px) {
-            .bg-text { font-size: 3.5rem; letter-spacing: 4px; }
+            .bg-text { font-size: 3.5rem; letter-spacing: 4px; padding: 0.1em 0.4em; }
             header { padding: 60px 10px; }
         }
     </style>
